@@ -25,7 +25,7 @@ jobs:
       # 3. 安装项目依赖并执行编译
       - name: Install dependencies and compile
         run: |
-          npm ci
+          npm install --legacy-peer-deps
           npm run compile   # 确保执行 package.json 中的编译脚本，生成 out/ 目录
 
       # 4. 使用官方 vsce 工具打包生成 .vsix 文件
