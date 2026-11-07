@@ -1,0 +1,49 @@
+{
+  "name": "log-searcher",
+  "displayName": "Log Searcher",
+  "description": "A high-performance log search and jump extension for network engineers",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "logSearcherView",
+          "name": "Log Search Panel",
+          "type": "webview"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "log-searcher.openSearch",
+        "title": "Open Log Search Panel"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm run check-types && node esbuild.js --watch",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "check-types": "tsc --noEmit",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "esbuild": "^0.20.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3"
+  }
+}

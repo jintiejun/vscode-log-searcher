@@ -1,0 +1,16 @@
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+# Python 相关的临时脚本和缓存
+*.py
+__pycache__/
+.env
+
+# VS Code 编译打包产物
+out/
+dist/
+*.vsix
+.vscode-test/
+node_modules/
